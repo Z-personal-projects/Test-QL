@@ -1,38 +1,19 @@
-import sqlite3
+import os
+import math
 
- 
 
-def login(username, password):
-    conn = sqlite3.connect('users.db')
-    cursor = conn.cursor()
+def add(a, b) -> int:
+    return math.floor(a + b)
 
- 
 
-    # Esta consulta es insegura y susceptible a inyección de SQL
-    query = 'SELECT * FROM users WHERE username=' + username + ' AND password=' +password
+def to_sentence(s) -> str:
+    s = s.capitalize()
 
-    cursor.execute(query)
-    user = cursor.fetchone()
-    conn.close()
-
- 
-
-    return user
-
- 
-
-# Ejemplo de uso del código inseguro
-if __name__ == "__main__":
-    username = input("Ingrese el nombre de usuario: ")
-    password = input("Ingrese la contraseña: ")
-
- 
-
-    user = login(username, password)
-
- 
-
-    if user:
-        print("Inicio de sesión exitoso.")
+    if s.endswith('.'):
+        return s
     else:
-        print("Nombre de usuario o contraseña incorrectos.")
+        return s + '.'
+
+
+def sub(a, b) -> int:
+    return math.floor(a - b)
