@@ -9,7 +9,7 @@ def login(username, password):
  
 
     # Esta consulta es insegura y susceptible a inyección de SQL
-    query = f"SELECT * FROM users WHERE username='{username}' AND password='{password}'"
+    query = 'SELECT * FROM users WHERE username=' + username + ' AND password=' +password
 
     cursor.execute(query)
     user = cursor.fetchone()
