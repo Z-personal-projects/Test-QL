@@ -1,1 +1,2 @@
-print("TEST")
+password = "SASCNB·$IECBNGV"
+print(password)
